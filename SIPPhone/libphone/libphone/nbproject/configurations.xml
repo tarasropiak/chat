@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="80">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+      <itemPath>../include/SIPClient.hpp</itemPath>
+      <itemPath>../include/SIPClientCallbacks.hpp</itemPath>
+      <itemPath>../include/SIPLogging.hpp</itemPath>
+      <itemPath>../include/SIPTask.hxx</itemPath>
+      <itemPath>../include/SIPTaskBase.hpp</itemPath>
+      <itemPath>../include/Session.hpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <itemPath>../src/SIPClient.cpp</itemPath>
+      <itemPath>../src/SIPLogging.cpp</itemPath>
+      <itemPath>../src/SIPTaskBase.cpp</itemPath>
+      <itemPath>../src/Session.cpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>../include</Elem>
+    <Elem>../src</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="3">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>GNU|GNU</compilerSet>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <preprocessorList>
+            <Elem>DEBUG=1</Elem>
+          </preprocessorList>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>../../logger/include</pElem>
+            <pElem>../include</pElem>
+            <pElem>/usr/include/sofia-sip-1.12</pElem>
+          </incDir>
+          <commandLine>`pkg-config sofia-sip-ua --cflags`</commandLine>
+          <preprocessorList>
+            <Elem>DEBUG=1</Elem>
+            <Elem>ENABLE_SOFIA_SIP_LOGGING=1</Elem>
+          </preprocessorList>
+        </ccTool>
+        <archiverTool>
+          <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libphone.a</output>
+        </archiverTool>
+      </compileType>
+    </conf>
+    <conf name="Release" type="3">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>GNU|GNU</compilerSet>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+          <incDir>
+            <pElem>../../logger/include</pElem>
+            <pElem>../include</pElem>
+            <pElem>/usr/include/sofia-sip-1.12</pElem>
+          </incDir>
+          <commandLine>`pkg-config sofia-sip-ua --cflags`</commandLine>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <archiverTool>
+          <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libphone.a</output>
+        </archiverTool>
+      </compileType>
+    </conf>
+  </confs>
+</configurationDescriptor>
